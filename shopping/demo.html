@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <title>购物车DEMO</title>
+    <style>
+        body {
+            position: relative;
+        }
+        .purchase, .shoppingList {
+            background: greenyellow;
+            font-size: 16px;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+        .shoppingList {
+            position: absolute;
+            top: 500px;
+            left: 300px;
+        }
+
+        .icon-box, .icon {
+            transition: transform 2s;
+        }
+        .icon-box {
+            transition-timing-function: linear;
+        }
+        .icon {
+            transition-timing-function: cubic-bezier(1, .02, .82, .56);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="purchase" class="purchase">请点击这里触发动效</div>
+
+    <div id="iconBox" class="icon-box">
+        <!-- <div id="icon" class="icon">i</div>-->
+        <img id="icon" class="icon" src="" alt="icon">
+    </div>
+
+    <div id="shoppingList" class="shoppingList">购物车</div>
+
+
+    <script>
+        
+        var box = document.getElementById('iconBox');
+        var icon = box.querySelector('img')
+
+        $('#purchase').on('click', function() {
+            $('#iconBox').css({'transform': 'translateX(300px)'})
+            $('#icon').css({'transform': 'translateY(500px)'})
+            // box.style.transform = 'translateX(300px)';
+            // icon.style.transform = 'translateY(500px)';
+        })
+    </script>
+</body>
+</html>
